@@ -1,0 +1,37 @@
+.headWrapper{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 31px;
+    padding-bottom: 0px;
+}
+
+.containerAlbum{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.album{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color:#ffff;
+}
+
+.show{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #32c94b;
+    cursor: pointer;
+}
+
+.ruler{
+    margin-top: 10px;
+    border: 1px solid #32c94b;
+}
