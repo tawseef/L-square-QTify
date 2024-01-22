@@ -8,10 +8,10 @@
     height:100%;
 }
 
-.wrapper{
+.wrapper8{
     display: flex;
     align-items: center;
-    height: 48px;
+    /* height: 48px; */
 }
 
 .searchButton{

@@ -3,6 +3,7 @@ import "./displayCard.css";
 import Cards from "../cardFolder/card";
 import Cardapi from "../apiComponents/cardAPI";
 import Newalbumapi from "../apiComponents/newAlbumApi";
+import Carousel from "../carouselFolder/Carousel";
 import { Grid } from "@mui/material";
 
 
@@ -19,7 +20,6 @@ function displayCards(){
     useEffect( async ()=>{
         const topalbumDataCall= await Cardapi();
         setTopAlbumData(topalbumDataCall);
-
         const newAlbumDataCall= await Newalbumapi();
         setNewAlbum(newAlbumDataCall);
     },[]);
@@ -34,13 +34,36 @@ function displayCards(){
             </p>
         </div>
             <div className="containerAlbum">
-            {!topalbumData ? false :
-                topalbumData.map((item)=>(
-                    <Grid  key={item.id}>
-                        <Cards data={item} type="album"/>
-                    </Grid>
-                ))
-            }
+                {!topalbumData ? false :
+                    topalbumData.map((item)=>(
+                        <Grid  key={item.id}>
+                            <Cards data={item} type="album"/>
+                        </Grid>
+                    ))
+                }
+
+                {/* {!showCollapse ?
+                <>{!topalbumData ? false :
+                    topalbumData.map((item)=>(
+                        <Grid  key={item.id}>
+                            <Cards data={item} type="album"/>
+                        </Grid>
+                    ))
+                }</>
+                 
+                 :
+                    <>
+                    <Carousel data={topalbumData} renderComponent={(data)=> <Cards data={data} type="album"/> } />
+                    </>
+                 } */}
+
+
+            {/* {!topalbumData ? false :
+            <Carousel data={topalbumData} renderComponent={(data)=> <Cards data={data} type="album" /> } />
+            } */}
+
+
+
             </div>
             <hr className="ruler"/>
 

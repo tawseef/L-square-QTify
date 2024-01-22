@@ -3,6 +3,7 @@ import Logo from "../logo/logo";
 import Search from "../searchbox/searchbox";
 import Button from "../button/button";
 import "./navbar.css" 
+// import { Link } from "react-router-dom";
 
 function Navbar(){
     return (

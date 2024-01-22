@@ -1,6 +1,7 @@
 import { Tooltip, Chip } from "@mui/material";
 import React from "react";
 import "./card.css";
+// import { Link } from "react-router-dom";
 
 function Card({ data, type }) {
   const getCard = (type) => {
@@ -43,7 +44,7 @@ function Card({ data, type }) {
         // return(
         //     <div>
         // <Tooltip title={`${songs.length} songs`} placement="top" arrow>
-        // <a href={`/album/${slug}`}>
+        // <Link to={`/album/${slug}`}>
         //     <div className="card">
         //     {/* UP and DOWN */}
         //         <div className="wrapper">
@@ -60,7 +61,7 @@ function Card({ data, type }) {
         //             <p>{title}</p>
         //         </div> */}
         //     </div>
-        // </a>
+        // </Link>
         // </Tooltip>
         // </div>
         //  );

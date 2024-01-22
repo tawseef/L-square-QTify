@@ -10,7 +10,7 @@ function searchbox({ placeholder }) {
 
   return (
     <>
-      <form className="wrapper" onSubmit={(e) => onSubmit(e)}>
+      <form className="wrapper8" onSubmit={(e) => onSubmit(e)}>
         <input type="text" class="searchclass" placeholder={placeholder}/>
         <button className="searchButton" type="submit">
           < SearchIcon />
