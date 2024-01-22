@@ -20,6 +20,24 @@ export const fetchNewAlbums = async () => {
     }
 }
 
+export const fetchSongs = async () => {
+    try{
+        const response2 = await axios.get(`${BACKEND_ENDPOINT}/songs`);
+        return response2.data;
+    }catch(e){
+        return null;
+    }
+}
+
+export const fetchFilters = async () => {
+    try{
+        const response3 = await axios.get(`${BACKEND_ENDPOINT}/genres`);
+        return response3.data;
+    }catch(e){
+        return null;
+    }
+}
+
 
 
 // Fetch Songs and Fetch Filters 

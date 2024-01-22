@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/navbarFolder/Navbar/navbar';
-import Hero from './components/heroSectionFolder/theSection/heroSection';
-import DisplayCard from "./components/displayCards/displayCard";
-import HomePage from './pages/HomePage/HomePage';
-import { fetchNewAlbums, fetchTopAlbums } from './components/apiComponents/api';
+// import Hero from './components/heroSectionFolder/theSection/heroSection';
+// import DisplayCard from "./components/displayCards/displayCard";
+// import HomePage from './pages/HomePage/HomePage';
+import { fetchNewAlbums, fetchTopAlbums, fetchSongs } from './components/apiComponents/api';
 import { StyledEngineProvider } from '@mui/material';
 // import data from "./sampleData.json";
 
@@ -22,15 +22,16 @@ function App() {
   useEffect(()=>{
     generateData("topAlbums", fetchTopAlbums);
     generateData("newAlbums", fetchNewAlbums);
+    generateData("songs", fetchSongs);
   },[]);
 
-  const {topAlbums = [], newAlbums = [] } = data;
+  const {topAlbums = [], newAlbums = [] , songs = [] } = data;
   
 
   return (<>
-    <StyledEngineProvider>
+    <StyledEngineProvider injectFirst>
       <Navbar />
-      <Outlet context={{data:{topAlbums, newAlbums}}}/>
+      <Outlet context={{data:{topAlbums, newAlbums, songs}}}/>
       {/* <HomePage /> */}
       {/* <Hero /> */}
       {/* <DisplayCard /> */}

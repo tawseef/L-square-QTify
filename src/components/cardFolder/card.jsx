@@ -12,29 +12,29 @@ function Card({ data, type }) {
         return (
           <div>
             <Tooltip title={`${songs.length} songs`} placement="top" arrow>
-            <a href={`/album/${slug}`}>
-              <div className="card">
-                <div className="wrapper">
-                  <img
-                    src={image}
-                    alt="album"
-                    loading="lazy"
-                    className="dispImg"
-                  />
-                  <div className="banner">
-                    <div className="">
-                      <Chip
-                        label={`${follows} Follows`}
-                        size="small"
-                        className="pill typoBelow"
-                      />
+              <a href={`/album/${slug}`}>
+                <div className="card">
+                  <div className="wrapper">
+                    <img
+                      src={image}
+                      alt="album"
+                      loading="lazy"
+                      className="dispImg"
+                    />
+                    <div className="banner">
+                      <div>
+                        <Chip
+                          label={`${follows} Follows`}
+                          size="small"
+                          className="pill typoBelow"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="titleWrapper">
-                <p className="typo">{title}</p>
-              </div>
+                <div className="titleWrapper">
+                  <p className="typo">{title}</p>
+                </div>
               </a>
             </Tooltip>
           </div>
@@ -69,22 +69,26 @@ function Card({ data, type }) {
 
       case "song": {
         const { image, likes, title } = data;
+
         return (
-          <div className="wrapper">
-            <div className="card">
-              <img src={image} alt="song" loading="lazy" />
-              <div className="banner">
-                <div className="pill">
-                  <p> {likes} Likes </p>
+          <div>
+            <div className="wrapper">
+              <div className="card">
+                <img src={image} alt="song" loading="lazy" />
+                <div className="banner">
+                  <div className="pill">
+                    <p> {likes} Likes </p>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="titleWrapper">
-              <p>{title}</p>
+              <p className="typo">{title}</p>
             </div>
           </div>
         );
       }
+
       default:
         return <></>;
     }
